@@ -1,0 +1,87 @@
+title = "Post"
+url = "/post/:slug"
+layout = "default"
+is_hidden = 0
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "blog/category"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "blog/category"
+
+[ssbuttons]
+fa = "maxcdn"
+twitter = 1
+facebook = 1
+order_twitter = 1
+order_facebook = 2
+==
+
+<main class="main">
+  <div id="nt-single" class="nt-single">
+        <!-- promo primary start-->
+        <section class="promo-primary">
+          <div class="overlay"></div>
+          <picture>
+            <source srcset="{{ 'assets/img/blog-detail.jpg'  | theme }}" media="(min-width: 992px)" /><img class="jarallax-img img-bg"
+              src="{{ 'assets/img/blog-detail.jpg'  | theme }}" alt="img" />
+          </picture>
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <div class="align-container">
+                  <div class="align-item">
+                    <h1 class="title"> {{ post.title }} </h1>
+                    <span>{{ category.name }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- promo primary end-->
+      <div class="nt-theme-inner-container section blog-detail nt-has-sidebar">
+        <div class="container">
+            <div class="row">
+              <div class="col-lg-8">
+                  <div class="nt-theme-content nt-clearfix">
+                    <div class="content-block">
+                        <div class="date-block">
+                          <svg class="icon" viewBox="0 0 14.389 16" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12.79 1.6h-.799V0h-1.599v1.6H3.997V0H2.398v1.6h-.799C.716 1.6.008 2.316.008 3.2L0 14.4c0 .884.715 1.6 1.599 1.6H12.79a1.6 1.6 0 001.599-1.6V3.2a1.6 1.6 0 00-1.599-1.6zm0 12.8H1.599V5.6H12.79v8.8zm-1.974-6.352L9.968 7.2l-3.901 3.904-1.694-1.696-.847.848L6.067 12.8l4.749-4.752z" fill-rule="evenodd" clip-rule="evenodd" />
+                          </svg>
+                          <span class="date">{{ post.published_at |date('d') }} {{ post.published_at |date('M') }} {{ post.published_at |date('Y') }}</span>
+                        </div>
+                        <h3 class="title">{{ post.title }}</h3>
+                        <div class="promo-holder">
+                          <div class="nt-blog-media">
+                              <a class="nt-blog-media-link" href="https://ninetheme.com/themes/r-energy/solar-energy-what-you-need-to-know/">
+                                <img width="2560" height="1707" src="{{ post.featured_images[0] }}" class="img-fluid wp-post-image" alt="" loading="lazy" srcset="https://ninetheme.com/themes/r-energy/wp-content/uploads/2019/12/chuttersnap-s_7BE4D2va0-unsplash-scaled.jpg 2560w, https://ninetheme.com/themes/r-energy/wp-content/uploads/2019/12/chuttersnap-s_7BE4D2va0-unsplash-scaled-980x653.jpg 980w, https://ninetheme.com/themes/r-energy/wp-content/uploads/2019/12/chuttersnap-s_7BE4D2va0-unsplash-900x600.jpg 900w, https://ninetheme.com/themes/r-energy/wp-content/uploads/2019/12/chuttersnap-s_7BE4D2va0-unsplash-1800x1200.jpg 1800w, https://ninetheme.com/themes/r-energy/wp-content/uploads/2019/12/chuttersnap-s_7BE4D2va0-unsplash-768x512.jpg 768w, https://ninetheme.com/themes/r-energy/wp-content/uploads/2019/12/chuttersnap-s_7BE4D2va0-unsplash-1536x1024.jpg 1536w, https://ninetheme.com/themes/r-energy/wp-content/uploads/2019/12/chuttersnap-s_7BE4D2va0-unsplash-2048x1366.jpg 2048w" sizes="(max-width: 2560px) 100vw, 2560px" />
+                              </a>
+                          </div>
+                        </div>
+                        <div class="mt-5">
+                          {{ post.content | raw }}
+                        </div>
+                    </div>
+                  </div>
+
+              </div>
+              <div id="nt-sidebar" class="col-lg-4 nt-sidebar right-sidebar">
+                  <div class="nt-sidebar-inner">
+                    <div class="nt-sidebar-inner-widget widget_categories">
+                        <h4 class="nt-sidebar-inner-widget-title widget-title">Categories</h4>
+                        <ul class="category-list">
+                          <li class="category-list__item"><span> {% component 'blogCategories' %} </span></li>
+                        </ul>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+      </div>
+  </div>
+</main>

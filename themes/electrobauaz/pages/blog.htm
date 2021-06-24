@@ -1,0 +1,118 @@
+title = "Blog"
+url = "/blog/:page?"
+layout = "default"
+is_hidden = 0
+
+[viewBag]
+localeTitle[en] = "Blog"
+localeUrl[ru] = "Блог"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 3
+noPostsMessage = "Xəbər tapılmadı"
+sortOrder = "published_at desc"
+categoryPage = "blog"
+postPage = "post"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "blog-categories"
+==
+{% set posts = blogPosts.posts %}
+<main class="main">
+  <!-- promo primary start-->
+  <section class="promo-primary">
+    <div class="overlay"></div>
+    <picture>
+      <source srcset="{{ 'assets/img/elements.jpg' | theme }}" media="(min-width: 992px)" /><img
+        class="jarallax-img img-bg" src="{{ 'assets/img/elements.jpg' | theme }}" alt="img" />
+    </picture>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="align-container">
+            <div class="align-item">
+              <h1 class="title">
+                {{ 'Bloq' |_ }}                
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- promo primary end-->
+  <section class="section articles">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 col-lg-8 col-xl-8">
+          <div class="row">
+            {% for post in posts %}
+            <div class="col-12">
+              <div class="article-item">
+                <div class="article-item__img">
+                  {% for image in post.featured_images|slice(0, 1) %}
+                  <img class="img-bg" src="{{ image.path }}" alt="{{ post.title }}" />
+                  {% endfor %}
+                </div>
+                <div class="article-item__details"><span class="article-item__category">{{ category.name }}</span>
+                  <h3 class="article-item__title">
+                    <a class="article-item__link" href="{{ post.url }}">
+                      {{ post.title }}
+                    </a>
+                  </h3>
+                  <div class="article-item__date">
+                    <svg class="icon">
+                      <use xlink:href="#scalendar"></use>
+                    </svg> {{ post.published_at |date('d') }} {{ post.published_at |date('M') }} {{ post.published_at
+                    |date('Y') }} 
+                    {% for category in post.categories  %}
+                    
+                      <div class="tag-line ml-4">
+                        {% if loop.index == 1 %}
+                        <i class="fa fa-tag"></i>
+                        {% endif %}         
+                            {{ category.name }}
+                      </div>
+                    
+                    {% endfor %}
+
+
+                  </div>
+                  <p class="article-item__text">
+                    {{ post.excerpt }}
+                  </p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+            <div class="col-12 text-center">
+              <!-- pagination start-->
+              <ul class="pagination pagination--primary">
+                <li class="back"><a href="/blog/{{posts.currentPage-1}}">Back</a></li>
+                {% for page in 1..posts.lastPage %}
+                <li class="{{ posts.currentPage == page ? 'current' : null }} number">
+                  <a href="/blog/{{ page }} ">{{ page }}</a>
+                </li>
+                {% endfor %}
+                <li class="next"><a href="/blog/{{ posts.currentPage+1 }}">Next</a></li>
+              </ul>
+              <!-- pagination end-->
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-8 offset-sm-2 col-md-5 offset-md-0 col-lg-4 col-xl-3">
+
+          <!-- Category section -->
+          <div class="articles__inner">
+            <h4 class="articles__title">{{ 'Kateqoriyalar' |_ }}</h4>
+            {% component 'blogCategories' %}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

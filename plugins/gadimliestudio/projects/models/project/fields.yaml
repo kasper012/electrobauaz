@@ -1,0 +1,71 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+        hidden: true
+
+    title:
+        label: Layihənin adı
+        span: storm
+        cssClass: col-sm-4  
+        required: true
+    image:
+        label: Şəkil başlıq
+        type: mediafinder
+        comment: Tövsiyə olunan ölçülər - 3x2 (məsələn, 1500x1000 və ya 3000x2000)
+        span: storm
+        cssClass: col-sm-4  
+
+
+    youtube:
+        label: Video (Youtube link)
+        span: storm
+        cssClass: col-sm-4  
+        placeholder: https://www.youtube.com/embed/
+        comment: Youtube linki 'https://www.youtube.com/embed/'-dan başlamalıdı
+
+
+    # date: 
+    #     label: Vaxt
+    #     span: auto
+    #     type: datepicker
+    #     mode: date
+    # date_start:
+    #     label: Başlama tarixi
+    #     span: auto
+    #     type: datepicker
+
+    # date_finish:
+    #     label: Bitirmə tarixi
+    #     span: auto
+    #     type: datepicker
+
+    # excerpt:
+    #     label: Layihənin təsviri
+    #     type: textarea
+
+
+        
+    description:
+        label: Layihə haqqında məlumat
+        type: richeditor
+        required: true
+        span: storm
+        cssClass: col-md-12
+    images: 
+            label: Galereya
+            type: repeater
+            
+            prompt: Qalereyaya şəkil əlavə et
+            form:
+                fields:
+                    image: 
+                        label: Şəkil
+                        type: mediafinder
+                        comment: Tövsiyə olunan ölçülər - 3x2 (məsələn, 1500x1000 və ya 3000x2000)
+    
+

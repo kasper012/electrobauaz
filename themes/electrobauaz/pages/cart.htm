@@ -1,0 +1,145 @@
+title = "Cart"
+url = "/cart"
+layout = "shop-default"
+is_hidden = 0
+==
+<main class="main">
+        <section class="promo-primary promo-primary--shop">
+          <div class="overlay"></div>
+          <picture>
+            <img class="img-bg" src="{{ 'assets/img/catalog-bg.jpg' | theme }}"
+              alt="img" />
+          </picture>
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <div class="align-container">
+                  <div class="align-item">
+                    <h1 class="title">Shopping Cart</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- shopping cart start-->
+        <section class="section shopping-cart">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <div class="cart-inner">
+                  <!-- cart heading start-->
+                  <div class="cart-heading">
+                    <div class="product-block"><span>Product</span></div>
+                    <div class="price-block"><span>Price</span></div>
+                    <div class="quantity-block"><span>Quantity</span></div>
+                    <div class="total-block"><span>Total Price</span></div>
+                    <div class="next-block"></div>
+                  </div>
+                  <!-- cart heading end-->
+                  <!-- cart content start-->
+                  <div class="cart-content">
+                    <!-- cart item start-->
+                    <div class="cart-item">
+                      <div class="product-block inner-block"><a class="img-holder" href="shopping-cart.html#"><img
+                            class="img-bg" src="{{ 'assets/img/nav-sl-2.png' | theme }}" alt="product" /></a>
+                        <div class="text-holder">
+                          <p>Power: 5.5 kWp</p><a href="shopping-cart.html#">DUOMAX twin-DEG5C.07(II)</a>
+                        </div>
+                      </div>
+                      <div class="price-block inner-block"><span class="count">1200.00 $</span></div>
+                      <div class="quantity-block inner-block">
+                        <div class="count-block"><span class="minus">—</span>
+                          <input class="items-count" type="number" value="2" /><span class="plus">+</span>
+                        </div>
+                      </div>
+                      <div class="total-block inner-block"><span class="total">2400.00 $</span></div>
+                      <div class="next-block inner-block"><span class="favorites">
+                          <svg class="icon">
+                            <use xlink:href="#heart"></use>
+                          </svg></span><span class="remove">
+                          <svg class="icon">
+                            <use xlink:href="#close"></use>
+                          </svg></span></div>
+                    </div>
+                    <!-- cart item end-->
+                    <!-- cart item start-->
+                    <div class="cart-item">
+                      <div class="product-block inner-block"><a class="img-holder" href="shopping-cart.html#"><img
+                            class="img-bg" src="{{ 'assets/img/product-2.png' | theme }}" alt="product" /></a>
+                        <div class="text-holder">
+                          <p>Power: 4.5 kWp</p><a href="shopping-cart.html#">DUOMAX-PEG5.07</a>
+                        </div>
+                      </div>
+                      <div class="price-block inner-block"><span class="count">950.00 $</span></div>
+                      <div class="quantity-block inner-block">
+                        <div class="count-block"><span class="minus">—</span>
+                          <input class="items-count" type="number" value="1" /><span class="plus">+</span>
+                        </div>
+                      </div>
+                      <div class="total-block inner-block"><span class="total">950.00 $</span></div>
+                      <div class="next-block inner-block"><span class="favorites">
+                          <svg class="icon">
+                            <use xlink:href="#heart"></use>
+                          </svg></span><span class="remove">
+                          <svg class="icon">
+                            <use xlink:href="#close"></use>
+                          </svg></span></div>
+                    </div>
+                    <!-- cart item end-->
+                    <!-- cart item start-->
+                    <div class="cart-item">
+                      <div class="product-block inner-block"><a class="img-holder" href="shopping-cart.html#"><img
+                            class="img-bg" src="{{ 'assets/img/product-4.png' | theme }}" alt="product" /></a>
+                        <div class="text-holder">
+                          <p>Power: 5.0 kWp</p><a href="shopping-cart.html#">DUOMAX M PLUS - DEG5(II)</a>
+                        </div>
+                      </div>
+                      <div class="price-block inner-block"><span class="count">1000.00 $</span></div>
+                      <div class="quantity-block inner-block">
+                        <div class="count-block"><span class="minus">—</span>
+                          <input class="items-count" type="number" value="1" /><span class="plus">+</span>
+                        </div>
+                      </div>
+                      <div class="total-block inner-block"><span class="total">1000.00 $</span></div>
+                      <div class="next-block inner-block"><span class="favorites">
+                          <svg class="icon">
+                            <use xlink:href="#heart"></use>
+                          </svg></span><span class="remove">
+                          <svg class="icon">
+                            <use xlink:href="#close"></use>
+                          </svg></span></div>
+                    </div>
+                    <!-- cart item end-->
+                    <!-- coupon block start-->
+                    <div class="coupon-block"><span class="title">Coupon Code</span>
+                      <div class="input-holder">
+                        <input class="coupon-input" type="text" required="required" placeholder="xxxx-xx" />
+                      </div><a class="button button--filled" href="shopping-cart.html#" data-hover="Apply Coupon"><span>Apply
+                          Coupon</span></a><span class="refresh">
+                        <svg class="icon">
+                          <use xlink:href="#refresh"></use>
+                        </svg></span>
+                    </div>
+                    <!-- coupon block end-->
+                    <!-- cart totals start-->
+                    <div class="shopping-totals">
+                      <h4 class="title">Cart Totals</h4>
+                      <div class="total-item"><span class="subtitle">Subtotal:</span><span class="value">$ 4350.00</span>
+                      </div>
+                      <div class="total-item"><span class="subtitle">Sale:</span><span class="value">$ 100.00</span></div>
+                      <div class="total-item"><span class="subtitle">Total:</span><span class="value">$ 4250.00</span></div>
+                      <div class="btn-holder"><a class="button button--transparent" href="shopping-cart.html#"
+                          data-hover="Proceed to Checkout"><span>Proceed to Checkout</span></a>
+                      </div>
+                    </div>
+                    <!-- cart totals end-->
+                  </div>
+                  <!-- cart content end-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- shopping cart end-->
+      </main>

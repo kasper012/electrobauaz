@@ -11,7 +11,7 @@ return [
     |
     */
 
-    'activeTheme' => 'demo',
+    'activeTheme' => 'electrobauaz',
 
     /*
     |--------------------------------------------------------------------------
@@ -36,7 +36,7 @@ return [
     |
     */
 
-    'backendUri' => 'backend',
+    'backendUri' => 'backend/administration',
 
     /*
     |--------------------------------------------------------------------------

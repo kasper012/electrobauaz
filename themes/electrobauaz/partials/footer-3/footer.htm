@@ -1,0 +1,59 @@
+<!-- footer-style-3 start-->
+<footer class="footer--style-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
+        <div class="heading primary-heading">
+          <h5 class="subtitle"><span>Sign up</span> <span>to Electrobauaz</span></h5>
+        </div>
+        <!-- footer subscribe start-->
+        <form class="subscribe-form" action="javascript:void(0);">
+          <input class="input-mail" type="email" placeholder="Email" />
+          <button class="button button--filled" type="submit" data-hover="Subscribe"><span>Subscribe</span></button>
+        </form>
+        <!-- footer subscribe end-->
+        <!-- footer socials start-->
+        <!-- socials start-->
+        <nav class="socials-holder">
+          <ul class="socials-primary">
+            {% for social in company.socials %}
+            <li><a href="{{ social.url }}"><i class="fa fa-{{ social.name }}" aria-hidden="true"></i></a></li>
+            {% endfor %}
+          </ul>
+        </nav>
+        <!-- socials end -->
+        <!-- footer socials end-->
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <!-- lower block start-->
+        <div class="lower-block">
+          <div class="row align-items-center">
+            <div class="col-lg-4">
+              <!-- logo start-->
+              <div class="footer-logo"><a class="logo" href="index.html">
+                  <svg class="icon">
+                    <use xlink:href="#logo"></use>
+                  </svg><span>Electrobauaz</span></a></div>
+              <!-- logo end-->
+            </div>
+            <div class="col-lg-4">
+              <!-- privacy start-->
+              <div class="privacy-block"><a href="index-3.html#">Privacy Policy <span class="separator">|</span> </a><a
+                  href="index-3.html#">Term and Condision</a></div>
+              <!-- privacy end-->
+            </div>
+            <div class="col-lg-4">
+              <p class="copyright">© 2019 Electrobauaz Template by Artureanec</p>
+            </div>
+          </div>
+        </div>
+        <!-- lower block end-->
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- footer-style-3 end-->

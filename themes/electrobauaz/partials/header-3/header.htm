@@ -1,0 +1,122 @@
+==
+<!-- mobile-menu start-->
+<div class="mobile-nav">
+  <div class="nav-inner">
+    <div class="nav-item">
+      <!-- main menu start-->
+      <nav class="menu-holder">
+        <ul class="mobile-menu">
+          <li class="menu-item menu-item--has-child   {% if this.page.id == 'home' %} active {% endif %}><a href="javascript:void(0);"><span>Home</span></a>
+            <!-- sub-menu start-->
+            <ul class="sub-menu">
+              <li class=" {% if this.page.id == 'home' %} active {% endif %}"><a href="{{ 'home' | page }}">Home page 1</a></li>
+              <li class=" {% if this.page.id == 'home-2' %} active {% endif %}"><a href="{{ 'home-2' | page }}">Home page 2</a></li>
+              <li class=" {% if this.page.id == 'home-3' %} active {% endif %}"><a href="{{ 'home-3' | page }}">Home page 3</a></li>
+            </ul>
+            <!-- sub-menu end-->
+          </li>
+          <li class="menu-item {% if this.page.id == 'services' %} active {% endif %}"><a href="{{ 'services' | page }}"><span>Services</span></a></li>
+          <li class="menu-item {% if this.page.id == 'projects' %} active {% endif %}"><a href="{{ 'projects' | page }}"><span>Projects</span></a></li>
+          <li class="menu-item {% if this.page.id == 'blog' %} active {% endif %}"><a href="{{ 'blog' | page }}"><span>Blog</span></a></li>
+          <li class="menu-item {% if this.page.id == 'about' %} active {% endif %}"><a href="{{ 'about' | page }}"><span>About</span></a></li>
+          <li class="menu-item {% if this.page.id  ==  'faq' %} active {% endif %}"><a href="{{ 'faq' | page }}"><span>FAQ</span></a></li>
+          <li class="menu-item {% if this.page.id == 'contacts' %} active {% endif %}"><a href="{{ 'contacts' | page }}"><span>Contacts</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+<!-- mobile-menu end-->
+<!-- header-style-3 start-->
+<header class="header--style-3" id="header">
+  <div class="container-fluid">
+    <div class="row no-gutters">
+      <div class="col-12">
+        <!-- lower line start-->
+        <div class="lower-line">
+          <div class="contacts-block">
+            <div class="address-block">
+              <p>Elliott Ave, Parkville VIC 3052, Melbourne</p>
+            </div>
+            <div class="phones-block"><a href="tel:+31859644725">+31 85 964 47 25</a><a href="tel:+31853255813">+31 85
+                325 58 13</a></div>
+            <div class="mail-block"><a href="mailto:r_enery@mail.com">r_enery@mail.co</a></div>
+          </div>
+          <div class="socials-block">
+            <!-- socials start-->
+            <nav class="socials-holder">
+              <ul class="socials-primary">
+                <li><a href="{{ 'home-3' | page }}#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="{{ 'home-3' | page }}#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="{{ 'home-3' | page }}#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                <li><a href="{{ 'home-3' | page }}#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+              </ul>
+            </nav>
+            <!-- socials end -->
+          </div>
+        </div>
+        <!-- lower line end -->
+      </div>
+    </div>
+    <div class="row no-gutters">
+      <div class="col-12">
+        <div class="top">
+          <!-- logo block start-->
+          <div class="logo-block"><a class="logo" href="{{ 'home' | page }}">
+              <svg class="icon">
+                <use xlink:href="#logo"></use>
+              </svg><span></span></a></div>
+          <!-- logo block end-->
+          <!-- menu block start-->
+          <div class="menu-block">
+            <!-- main menu start-->
+            <nav class="menu-holder">
+              <ul class="main-menu">
+                <li class="menu-item menu-item--has-child {% if this.page.id == 'home' %} active {% endif %}"><a href="javascript:void(0);"><span>Home</span></a>
+                  <!-- sub-menu start-->
+                  <ul class="sub-menu">
+                    <li class="{% if this.page.id == 'home' %} active {% endif %}"><a href="{{ 'home' | page }}">Home page 1</a></li>
+                    <li class="{% if this.page.id == 'home' %} active {% endif %}"><a href="{{ 'home-2' | page }}">Home page 2</a></li>
+                    <li class="{% if this.page.id == 'home' %} active {% endif %}"><a href="{{ 'home-3' | page }}">Home page 3</a></li>
+                  </ul>
+                  <!-- sub-menu end-->
+                </li>
+                <li class="menu-item {% if this.page.id == 'home' %} active {% endif %}"><a href="{{ 'services' | page }}"><span>Services</span></a></li>                
+                <li class="menu-item {% if this.page.id == 'home' %} active {% endif %}"><a href="{{ 'projects' | page }}"><span>Projects</span></a></li>
+                <li class="menu-item {% if this.page.id == 'home' %} active {% endif %}"><a href="{{ 'blog' | page }}"><span>Blog</span></a></li>
+                <li class="menu-item {% if this.page.id == 'home' %} active {% endif %}"><a href="{{ 'about' | page }}"><span>About</span></a></li>
+                <li class="menu-item {% if this.page.id == 'home' %} active {% endif %}"><a href="{{ 'faq' | page }}"><span>FAQ</span></a></li>
+                <li class="menu-item {% if this.page.id == 'home' %} active {% endif %}"><a href="{{ 'contacts' | page }}"><span>Contacts</span></a></li>
+              </ul>
+            </nav>
+            <!-- main menu end-->
+          </div>
+          <!-- menu block end-->
+          <!-- lang block start-->
+          <div class="lang-block">
+            <ul class="lang-select">
+              <li class="lang-item active"><span>EN</span>
+                <ul class="sub-list">
+                  <li class="lang-item"><a href="{{ 'home-3' | page }}#">French</a></li>
+                  <li class="lang-item"><a href="{{ 'home-3' | page }}#">Spanish</a></li>
+                  <li class="lang-item"><a href="{{ 'home-3' | page }}#">Deutsch</a></li>
+                  <li class="lang-item"><a href="{{ 'home-3' | page }}#">Russian</a></li>
+                </ul>
+              </li>
+            </ul><a class="button button--transparent" href="{{ 'home-3' | page }}#" data-hover="Get In Touch"><span>Get In
+                Touch</span></a>
+            <!-- menu-trigger start-->
+            <div class="hamburger">
+              <div class="hamburger-box">
+                <div class="hamburger-inner"></div>
+              </div>
+            </div>
+            <!-- menu-trigger end-->
+          </div>
+          <!-- lang block end-->
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- header-style-3 end-->

@@ -1,0 +1,69 @@
+title = "FAQ"
+url = "/faq"
+layout = "default"
+is_hidden = 0
+[company]
+==
+<main class="main">
+        <!-- promo primary start-->
+        <section class="promo-primary">
+          <div class="overlay"></div>
+          <picture>
+            <source srcset="{{ 'assets/img/contacts.jpg ' | theme }}" media="(min-width: 992px)" /><img class="jarallax-img img-bg"
+              src="{{ 'assets/img/contacts.jpg ' | theme }}" alt="img" />
+          </picture>
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <div class="align-container">
+                  <div class="align-item"><span>Electrobauaz</span>
+                    <h1 class="title">Frequently Asked Questions</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- promo primary end-->
+        <!-- faq start-->
+        <section class="section faq">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <div class="heading primary-heading">
+                  <h3 class="title">FAQ</h3>
+                  <h5 class="subtitle"><span>Questions that</span> <span>Interest You</span></h5>
+                  <p>Electrobauaz accreditation standards. Members are proactive in both undertaking and applying animal welfare
+                    scientific research, contributing to EAZA being a</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                {% for faq in company.faq %}
+                <!-- accordion item start-->
+                <div class="accordion-item accordion-item--with-shadow">
+                  <div class="title-block">
+                    <h4 class="title">{{ faq.question }}</h4>
+                    <svg class="icon">
+                      <use xlink:href="#close"></use>
+                    </svg>
+                  </div>
+                  <div class="content-block">
+                    <p>
+                      {{ faq.answer }}
+                    </p>
+                  </div>
+                </div>
+                <!-- accordion item end-->
+                {% endfor %}
+
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- faq end-->
+
+      </main>

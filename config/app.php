@@ -111,7 +111,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'en-gb',
 
     /*
     |--------------------------------------------------------------------------
@@ -137,7 +137,7 @@ return [
     |
     */
 
-    'key' => 'base64:7WQ0VM7qJBHKAumfXXp5dH+PdzF1Wco44zIxSf6kJuE=',
+    'key' => 'S0MOUXGOm7wdeaE9xYEiaRkKpABjRLZr',
 
     'cipher' => 'AES-256-CBC',
 

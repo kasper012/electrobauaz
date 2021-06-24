@@ -1,0 +1,50 @@
+title = "Portfolio"
+url = "/portfolio"
+layout = "default"
+is_hidden = 0
+==
+      <main class="main">
+        <!-- promo primary start-->
+        <section class="promo-primary">
+          <div class="overlay"></div>
+          <picture>
+            <source srcset="{{ 'assets/img/cases.jpg' | theme }}" media="(min-width: 992px)" /><img class="jarallax-img img-bg" src="{{ 'assets/img/cases.jpg' | theme }}"
+              alt="img" />
+          </picture>
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <div class="align-container">
+                  <div class="align-item"><span>{{ company.name }}</span>
+                    <h1 class="title">{{ 'Portfolio' }}</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- promo primary end-->
+        <!-- project cases start-->
+        <section class="section project-cases">
+          <div class="container">
+            <div class="row">
+              {% for project in projects %}
+              <div class="col-lg-4 col-md-6">
+                <!-- item start-->
+                <div class="cases-item"><a class="img-holder" href="{{ 'project-details' | page({id: project.id}) }}">
+                    <div class="overlay"></div><img class="img-bg" src="{{ project.image | media }}" alt="img" />
+                  </a>
+                  <div class="description">
+                    <h5 class="title">{{ project.title }}</h5><a class="with--line" href="{{ 'project-details' | page({id: project.id}) }}">{{ 'Daha ətraflı' |_ }}</a>
+                  </div>
+                </div>
+                <!-- item start-->
+              </div>
+              {% endfor %}
+            </div>
+
+          </div>
+        </section>
+        <!-- project cases end-->
+
+      </main>

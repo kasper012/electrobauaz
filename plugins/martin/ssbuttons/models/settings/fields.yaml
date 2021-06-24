@@ -1,0 +1,15 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    twitter:
+        label   : martin.ssbuttons::lang.settings.twitter
+        type    : switch
+        span    : left
+        default : true
+    facebook:
+        label   : martin.ssbuttons::lang.settings.facebook
+        type    : switch
+        span    : left
+        default : true

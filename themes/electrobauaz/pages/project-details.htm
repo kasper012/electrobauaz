@@ -1,0 +1,96 @@
+title = "Layihə haqqında məlumat"
+url = "/layihe-haqqinda-melumat/:id?"
+layout = "default"
+is_hidden = 0
+==
+use Gadimliestudio\Projects\Models\Project;
+public function onStart() {
+    $project = Project::find($this->param('id'));
+//    $this->page->title = $project->title;
+    $this['project'] = $project;
+}
+==
+<main class="main">
+	<!-- promo primary start-->
+	<section class="promo-primary">
+		<div class="overlay"></div>
+		<picture>
+			<source srcset="{{ project.image | media }}" media="(min-width: 992px)"/><img class="jarallax-img img-bg" src="{{ project.image | media }}" alt="img"/>
+		</picture>
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="align-container">
+						<div class="align-item"><span>{{ company.name }}</span>
+							<h1 class="title">{{ project.title }}</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- promo primary end-->
+  <!-- About start -->
+  <div class="nt-theme-inner-container section blog-detail nt-has-sidebar py-0">
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+              <div class="nt-theme-content nt-clearfix">
+                <div class="content-block">
+                    <div class="mt-5">
+                      {{ project.description | raw }}
+                    </div>
+                </div>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <!-- About end -->
+	<!-- project gallery start-->
+	<section class="section project-gallery-section ">
+		<div class="container">
+
+		</div>
+		<div class="row no-gutters">
+			<div class="col-12">
+				<div class="project-gallery-holder mb-5">
+					<div class="project-gallery">
+						{% for image in project.images %}
+						<a class="gallery-item" href="{{ image.image | media }}" data-fancybox="project-gallery">
+							<div class="overlay"></div>
+							<img class="img-bg" src="{{ image.image | media }}" alt="img"/>
+						</a>
+						{% endfor %}
+					</div>
+					<div class="project-gallery-dots"></div>
+				</div>
+				{% if project.youtube %}
+				<!-- video section start-->
+				<section class="section video-section no-padding-top no-padding-bottom">
+				  <div class="container">
+					<div class="row">
+					  <div class="col-12">
+						<div class="img-holder">
+						  <div class="overlay"></div>
+						  <picture>
+							<source srcset="{{ project.image | media }}" media="(min-width: 992px)" /><img class="img-bg"
+							  src="{{ project.image | media }}" alt="img" />
+						  </picture>
+							<a class="fancy-video" href="{{ project.youtube }}"><i class="fa fa-play"
+							  aria-hidden="aria-hidden"></i>
+							</a>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				</section>
+				<!-- video section start-->
+				{% endif %}
+			</div>
+		</div>
+	</section>
+	<!-- project gallery end-->
+
+
+</main>

@@ -1,0 +1,71 @@
+title = "Xidmətlər"
+url = "/xidmetler"
+layout = "default"
+is_hidden = 0
+==
+      <main class="main">
+        <!-- promo primary start-->
+        <section class="promo-primary">
+          <div class="overlay"></div>
+          <picture>
+            <source srcset="{{ 'assets/img/services-details.jpg ' | theme }}" media="(min-width: 992px)" /><img class="jarallax-img img-bg"
+              src="{{ 'assets/img/services-details.jpg ' | theme }}" alt="img" />
+          </picture>
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <div class="align-container">
+                  <div class="align-item"><span>Electrobauaz</span>
+                    <h1 class="title">{{ 'Xidmətlər' |_ }}</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- promo primary end-->
+        <!-- services details start-->
+        <section class="section services-details">
+          <!-- details tabs start-->
+          <div class="tabs-holder details-tabs">
+            <div class="container">
+              <div class="row">
+                <div class="col-xl-3 col-md-4">
+                  <!-- tabs header start-->
+                  <div class="tabs-header">
+                    {% for service in services %}
+                    <span class="tabs-header__title">{{ service.title }}</span>
+                    {% endfor %}
+                    </div>
+                  <!-- tabs header end-->
+
+                </div>
+                <div class="col-xl-9 col-md-8">
+                  <!-- tabs content start-->
+                  {% for service in services %}
+                  <div class="tabs-content">
+                    <!-- tabs content item start-->
+                    <div class="tabs-content__item">
+                      <div class="img-holder">
+                        <div class="overlay"></div>
+                        <picture>
+                          <source srcset="{{ service.image | media }}" media="(min-width: 992px)" /><img src="{{ service.image | media }}"
+                            alt="img" />
+                        </picture>
+                      </div>
+                      <h2 class="title">{{ service.title }}</h2>
+                      {{ service.description | raw }}
+                    </div>
+                    <!-- tabs content item end-->
+                  </div>
+                  {% endfor %}
+                  <!-- tabs content end-->
+                  <!-- details tabs end  -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- services details end-->
+
+      </main>

@@ -1,0 +1,93 @@
+==
+      <!-- footer start-->
+      <footer class="footer">
+        <div class="footer-top">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 offset-lg-0 col-md-7 offset-md-1">
+                <h4 class="title" style="letter-spacing: 0.5px">
+                  {{ 'Bizimlə əlaqə' |_ }}
+                </h4>
+                <!-- footer contacts start-->
+                <div class="footer-contacts ">
+                  <div class="row">
+                    <div class="address col-lg-3">
+                      <p>{{ 'Ünvan' |_ }}:</p>
+                    </div>
+                    <div class="col-lg-9 address">
+                      <p>{{ company.address }}</p>
+                    </div>
+                    <div class="phone-number col-lg-3">
+                      <p>{{ 'Telefon' |_ }}:</p> 
+                    </div>
+                    <div class="col-lg-9 phone-number">
+                      {% for phone in company.phone %}
+                      <a href="tel:{{ phone.phone }}">
+                        {{ phone.phone }} <br>
+                      </a>
+                      {% endfor %}
+                    </div>
+                    
+                   <div class="e-main col-lg-3">
+                      <p>Email:</p>
+                   </div>
+                   <div class="col-lg-9">
+                      {% for email in company.email %}
+                      <a href="mailto:{{ email.email }}">
+                        {{ email.email }} <br>
+                      </a>
+                      {% endfor %}
+                  </div>
+                  <div class="col-12 pt-2">
+                      <ul class="socials-primary">
+                        {% for social in company.socials %}
+                        <li class="text-center" style="font-size: 18px;"><a href="{{ social.url }}"><i class="fa fa-{{ social.name }}" aria-hidden="true"></i></a></li>
+                        {% endfor %}
+                      </ul>
+                  </div>
+                </div>
+
+                </div>
+                <!-- footer contacts end-->
+              </div>
+              <div class="col-lg-6 offset-lg-0 col-md-7 offset-md-1">
+                <h4 class="title" style="letter-spacing: 0.5px">{{ 'Linklər' |_ }}</h4>
+                <!-- footer nav start-->
+                <nav class="footer-nav">
+                  <ul class="footer-menu">
+                    <li class="{% if this.page.id == 'home' %}active {% endif %}"><a href="{{ 'home' | page }}">{{ 'Əsas səhifə' |_ }}</a></li>
+                    <li class="{% if this.page.id == 'services' %}active {% endif %}"><a href="{{ 'services' | page}}" >{{ 'Xidmətlər' |_ }}</a></li>
+                    <li class="{% if this.page.id == 'projects' %}active {% endif %}"><a href="{{ 'projects' | page }}">{{ 'Portfolio' |_ }}</a></li>
+                    <li class="{% if this.page.id == 'about' %}active {% endif %}"><a href="{{ 'about' | page }}">{{ 'Haqqımızda' |_ }}</a></li>
+                    <li class="{% if this.page.id == 'contacts' %}active {% endif %} jus"><a href="{{ 'contacts' | page }}">{{ 'Əlaqə' |_ }}</a></li>
+                  </ul>
+                </nav>
+                <!-- footer nav end-->
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="footer-lower">
+                <div class="row align-items-center">
+                  <div class="col-md-4">
+                    <!-- logo start-->
+                    <a href="{{ 'home' | page }}" class="logo-footer" style="background-image: url({{ 'assets/img/logo.svg' | theme  }});background-position: center"></a>
+                    <!-- logo end-->
+                  </div>
+                  <div class="col-md-4 d-flex justify-content-center">
+                    <p class="copyright text-center">© {{ now | date ('Y') }}  
+                    {{ 'Bütün hüquqlar qorunur' |_ }}.<br> Veb-sayt <a href="http://studio.gadimlie.com">Gadimlie Studio</a> tərəfindən hazırlanıb.</p>
+                  </div>
+                  <div class="col-md-4">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- footer end-->

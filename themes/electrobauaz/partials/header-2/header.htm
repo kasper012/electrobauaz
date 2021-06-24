@@ -1,0 +1,88 @@
+<!-- mobile-menu start-->
+<div class="mobile-nav">
+    <div class="nav-inner">
+        <div class="nav-item">
+            <!-- main menu start-->
+            <nav class="menu-holder">
+                <ul class="mobile-menu">
+                    <li class="menu-item menu-item--has-child {% if this.page.id == 'home' %} active {% endif %}"><a
+                            href="javascript:void(0);"><span>{{ 'Əsas səhifə' |_ }}</span></a>
+
+                    </li>
+                    <li class="menu-item {% if this.page.id == 'services' %} active {% endif %}"><a
+                            href="{{ 'services' | page }}"><span>{{ 'Xidmətlər' |_ }}</span></a></li>
+                    <li class="menu-item {% if this.page.id == 'projects' %} active {% endif %}"><a
+                            href="{{ 'projects' | page }}"><span>{{ 'Portfolio' |_ }}</span></a></li>
+                    <li class="menu-item {% if this.page.id == 'about' %} active {% endif %}"><a
+                            href="{{ 'about' | page }}"><span>{{ 'Haqqımızda' |_ }}</span></a></li>
+
+                    <li class="menu-item {% if this.page.id == 'contacts' %} active {% endif %}"><a
+                            href="{{ 'contacts' | page }}"><span>{{ 'Əlaqə' |_ }}</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- mobile-menu end-->
+<!-- header start-->
+<header class="header header--style-2" id="header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 column">
+                <!-- logo block start-->
+                <a  href="{{ 'home' | page }}" class="logo" style="background-image: url({{ 'assets/img/logo.svg' | theme }})">                
+                </a>
+                <!-- logo block end-->
+                <!-- menu block start-->
+                <div class="menu-block" style="width: 50vw;">
+                    <!-- main menu start-->
+                    <nav class="menu-holder">
+                        <ul class="main-menu">
+                            <li class="menu-item {% if this.page.id == 'home' %} active {% endif %}">
+                                <a href="{{ 'home' | page }}"><span>{{ 'Əsas səhifə' |_ }}</span></a>
+                            </li>
+                            <li class="menu-item {% if this.page.id == 'services' %} active {% endif %}">
+                                <a href="{{ 'services' | page }}"><span>{{ 'Xidmətlər' |_ }}</span></a>
+                            </li>
+                            <li class="menu-item {% if this.page.id == 'projects' or this.page.id == 'project-details' %} active {% endif %}">
+                                <a href="{{ 'projects' | page }}"><span>{{ 'Portfolio' |_ }}</span></a>
+                            </li>
+                            <!-- <li class="menu-item {% if this.page.id == 'blog' %} active {% endif %}"><a
+                                    href="{{ 'blog' | page }}"><span>{{ 'Xəbərlər' |_ }}</span></a></li> -->
+                            <li class="menu-item {% if this.page.id == 'about' %} active {% endif %}">
+                                <a href="{{ 'about' | page }}"><span>{{ 'Haqqımızda' |_ }}</span></a>
+                            </li>
+                            <!-- <li class="menu-item {% if this.page.id  ==  'faq' %} active {% endif %}"><a
+                                    href="{{ 'faq' | page }}"><span>FAQ</span></a></li> -->
+                            <li class="menu-item {% if this.page.id == 'contacts' %} active {% endif %}">
+                                <a href="{{ 'contacts' | page }}"><span>{{ 'Əlaqə' |_ }}</span></a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- main menu end-->
+                </div>
+                <!-- menu block end-->
+                <!-- lang block start-->
+                <div class="lang-block">
+                     <ul class="lang-select">
+                            <li class="lang-item active"><span>{{ activeLocale | upper }}</span>
+                                <ul class="sub-list">
+                                    {% component 'extendedLocalePicker' %}
+                                </ul>
+                            </li>
+                    </ul>
+
+                    <!-- menu-trigger start-->
+                    <div class="hamburger">
+                        <div class="hamburger-box">
+                            <div class="hamburger-inner"></div>
+                        </div>
+                    </div> 
+                    <!-- menu-trigger end-->
+                </div> 
+                <!-- lang block end-->
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header end-->

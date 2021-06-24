@@ -1,0 +1,91 @@
+<!-- mobile-menu start-->
+<div class="mobile-nav">
+  <div class="nav-inner">
+    <div class="nav-item">
+      <!-- main menu start-->
+      <nav class="menu-holder">
+        <ul class="mobile-menu">
+          <li class="menu-item menu-item--has-child class="{% if this.page.id == 'home' %} active {% endif %}"><a href="{{ 'home' | page }}"><span>Home</span></a>
+            <!-- sub-menu start-->
+            <ul class="sub-menu">
+              <li class="active"><a href="{{ 'home' | page }}">{{ 'Əsas səhifə' |_}} 1</a></li>
+              <li><a href="{{ 'home-2' | page }}">{{ 'Əsas səhifə' |_ }} 2</a></li>
+              <li><a href="{{ 'home-3' | page }}">{{ 'Əsas səhifə' |_ }} 3</a></li>
+            </ul>
+            <!-- sub-menu end-->
+          </li>
+          <li class="menu-item"><a href="{{ 'services' | page }}"><span>{{ 'Xidmətlər' |_}}</span></a></li>
+          <li class="menu-item"><a href="{{ 'projects' | page }}"><span>{{ 'Layihələr' |_}}</span></a></li>
+          <li class="menu-item"><a href="{{ 'blog' | page }}"><span>{{ 'Xəbərlər' |_}}</span></a></li>
+          <li class="menu-item"><a href="{{ 'about' | page }}"><span>{{ 'Haqqımızda' |_}}</span></a></li>
+          <li class="menu-item"><a href="{{ 'faq' | page }}"><span>FAQ</span></a></li>
+          <li class="menu-item"><a href="{{ 'contacts' | page }}"><span>{{ 'Əlaqə' |_}}</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+<!-- mobile-menu end-->
+<!-- header start-->
+<header class="header header--style-1" id="header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 column">
+        <!-- logo block start-->
+        <div class="logo-block"><a class="logo" href="{{ 'home' | page }}">
+            <svg class="icon">
+              <use xlink:href="#logo"></use>
+            </svg><span></span></a></div>
+        <!-- logo block end-->
+        <!-- menu block start-->
+        <div class="menu-block">
+          <!-- main menu start-->
+          <nav class="menu-holder">
+            <ul class="main-menu">
+              <li class="menu-item menu-item--has-child {% if this.page.id == 'home' %} active {% endif %}"><a href="javascript:void(0);"><span>{{ 'Əsas səhifə' |_}} 1</span></a>
+                <!-- sub-menu start-->
+                <ul class="sub-menu">
+                  <li class="{% if this.page.id == 'home' %} active {% endif %}"><a href="{{ 'home' | page }}">{{ 'Əsas səhifə' |_}} 1 1</a></li>
+                  <li class="{% if this.page.id == 'home-2' %} active {% endif %}"><a href="{{ 'home-2' | page }}">{{ 'Əsas səhifə' |_}} 2</a></li>
+                  <li class="{% if this.page.id == 'home-3' %} active {% endif %}"><a href="{{ 'home-3' | page }}">{{ 'Əsas səhifə' |_}} 3</a></li>
+                </ul>
+                <!-- sub-menu end-->
+              </li>
+          <li class="menu-item {% if this.page.id == 'services' %} active {% endif %}"><a href="{{ 'services' | page }}"><span>{{ 'Xidmətlər' |_}} </span></a></li>
+          <li class="menu-item {% if this.page.id == 'projects' %} active {% endif %}"><a href="{{ 'projects' | page }}"><span>{{ 'Layihələr' |_}} </span></a></li>
+          <li class="menu-item {% if this.page.id == 'blog' %} active {% endif %} "><a href="{{ 'blog' | page }}"><span>{{ 'Xəbərlər' |_}} </span></a></li>
+          <li class="menu-item {% if this.page.id == 'about' %} active {% endif %}"><a href="{{ 'about' | page }}"><span>{{ 'Haqqımızda' |_}} </span></a></li>
+          <li class="menu-item {% if this.page.id == 'faq' %} active {% endif %}"><a href="{{ 'faq' | page }}"><span>FAQ </span></a></li>
+          <li class="menu-item {% if this.page.id == 'contacts' %} active {% endif %}"><a href="{{ 'contacts' | page }}"><span>{{ 'Əlaqə' |_}} </span></a></li>
+            </ul>
+          </nav>
+          <!-- main menu end-->
+        </div>
+        <!-- menu block end-->
+        <!-- lang block start-->
+        <div class="lang-block">
+          <ul class="lang-select">
+            <li class="lang-item active"><span>EN</span>
+              <ul class="sub-list">
+                <li class="lang-item"><a href="{{ 'home' | page }}#">French</a></li>
+                <li class="lang-item"><a href="{{ 'home' | page }}#">Spanish</a></li>
+                <li class="lang-item"><a href="{{ 'home' | page }}#">Deutsch</a></li>
+                <li class="lang-item"><a href="{{ 'home' | page }}#">Russian</a></li>
+              </ul>
+            </li>
+          </ul><a class="button button--transparent" href="{{ 'home' | page }}#" data-hover="Get In Touch"><span>Get In
+              Touch</span></a>
+          <!-- menu-trigger start-->
+          <div class="hamburger">
+            <div class="hamburger-box">
+              <div class="hamburger-inner"></div>
+            </div>
+          </div>
+          <!-- menu-trigger end-->
+        </div>
+        <!-- lang block end-->
+      </div>
+    </div>
+  </div>
+</header>
+<!-- header end-->

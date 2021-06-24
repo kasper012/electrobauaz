@@ -1,0 +1,6 @@
+
+{% for code, name in locales %}
+    {% if activeLocale != code %}
+        <li class="lang-item"><a href="{{''|app}}{{ '/' ~ code ~ localeLinks[code] }}"> {{ code | upper }}</a></li>
+    {% endif %}
+{% endfor %}

@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'debug' => true,
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -28,7 +28,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'October CMS',
+    'name' => 'Electrobauaz',
 
     /*
     |--------------------------------------------------------------------------
@@ -41,37 +41,7 @@ return [
     |
     */
 
-    'url' => 'http://localhost',
-
-    /*
-    |--------------------------------------------------------------------------
-    | Trusted hosts
-    |--------------------------------------------------------------------------
-    |
-    | You may specify valid hosts for your application as an array or boolean
-    | below. This helps prevent host header poisoning attacks.
-    |
-    | Possible values:
-    |  - `true`: Trust the host specified in app.url, as well as the "www"
-    |            subdomain, if applicable.
-    |  - `false`: Disable the trusted hosts feature.
-    |  - array: Defines the domains to be trusted hosts. Each item should be
-    |           a string defining a domain, IP address, or a regex pattern.
-    |
-    | Example of array values:
-    |
-    |    'trustedHosts' => [
-    |       'example.com',           // Matches just example.com
-    |       'www.example.com',       // Matches just www.example.com
-    |       '^(.+\.)?example\.com$', // Matches example.com and all subdomains
-    |       'https://example.com',   // Matches just example.com
-    |    ],
-    |
-    | NOTE: Even when set to `false`, this functionality is explicitly enabled
-    | on the Backend password reset flow for security reasons.
-    */
-
-    'trustedHosts' => false,
+    'url' => env('APP_URL', 'http://localhost'),
 
     /*
     |--------------------------------------------------------------------------
@@ -92,7 +62,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Baku',
 
     /*
     |--------------------------------------------------------------------------
@@ -111,7 +81,7 @@ return [
     |
     */
 
-    'locale' => 'en-gb',
+    'locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -137,7 +107,7 @@ return [
     |
     */
 
-    'key' => 'base64:wpgglMnz1n3h52iCN2+H6l8XUzRhfgRa+s0/jOMn+ZA=',
+    'key' => env('APP_KEY', ''),
 
     'cipher' => 'AES-256-CBC',
 
@@ -178,7 +148,7 @@ return [
     */
 
     'loadDiscoveredPackages' => false,
-
+    
     /*
     |--------------------------------------------------------------------------
     | Class Aliases

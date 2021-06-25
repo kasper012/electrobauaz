@@ -61,56 +61,56 @@ class Plugin extends PluginBase
         ];
     }
 
-    //  public function registerNavigation()
-    //  {
-    //      return [
-    //          'blog' => [
-    //              'label'       => 'rainlab.blog::lang.blog.menu_label',
-    //              'url'         => Backend::url('rainlab/blog/posts'),
-    //              'icon'        => 'icon-pencil',
-    //              'iconSvg'     => 'plugins/rainlab/blog/assets/images/blog-icon.svg',
-    //              'permissions' => ['rainlab.blog.*'],
-    //              'order'       => 300,
+     public function registerNavigation()
+     {
+         return [
+             'blog' => [
+                 'label'       => 'rainlab.blog::lang.blog.menu_label',
+                 'url'         => Backend::url('rainlab/blog/posts'),
+                 'icon'        => 'icon-pencil',
+                 'iconSvg'     => 'plugins/rainlab/blog/assets/images/blog-icon.svg',
+                 'permissions' => ['rainlab.blog.*'],
+                 'order'       => 300,
 
-    //              'sideMenu' => [
-    //                  'new_post' => [
-    //                      'label'       => 'rainlab.blog::lang.posts.new_post',
-    //                      'icon'        => 'icon-plus',
-    //                      'url'         => Backend::url('rainlab/blog/posts/create'),
-    //                      'permissions' => ['rainlab.blog.access_posts']
-    //                  ],
-    //                  'posts' => [
-    //                      'label'       => 'rainlab.blog::lang.blog.posts',
-    //                      'icon'        => 'icon-copy',
-    //                      'url'         => Backend::url('rainlab/blog/posts'),
-    //                      'permissions' => ['rainlab.blog.access_posts']
-    //                  ],
-    //                  'categories' => [
-    //                      'label'       => 'rainlab.blog::lang.blog.categories',
-    //                      'icon'        => 'icon-list-ul',
-    //                      'url'         => Backend::url('rainlab/blog/categories'),
-    //                      'permissions' => ['rainlab.blog.access_categories']
-    //                  ]
-    //              ]
-    //          ]
-    //      ];
-    //  }
+                 'sideMenu' => [
+                     'new_post' => [
+                         'label'       => 'rainlab.blog::lang.posts.new_post',
+                         'icon'        => 'icon-plus',
+                         'url'         => Backend::url('rainlab/blog/posts/create'),
+                         'permissions' => ['rainlab.blog.access_posts']
+                     ],
+                     'posts' => [
+                         'label'       => 'rainlab.blog::lang.blog.posts',
+                         'icon'        => 'icon-copy',
+                         'url'         => Backend::url('rainlab/blog/posts'),
+                         'permissions' => ['rainlab.blog.access_posts']
+                     ],
+                     'categories' => [
+                         'label'       => 'rainlab.blog::lang.blog.categories',
+                         'icon'        => 'icon-list-ul',
+                         'url'         => Backend::url('rainlab/blog/categories'),
+                         'permissions' => ['rainlab.blog.access_categories']
+                     ]
+                 ]
+             ]
+         ];
+     }
 
-    // public function registerSettings()
-    // {
-    //     return [
-    //         'blog' => [
-    //             'label' => 'rainlab.blog::lang.blog.menu_label',
-    //             'description' => 'rainlab.blog::lang.blog.settings_description',
-    //             'category' => 'rainlab.blog::lang.blog.menu_label',
-    //             'icon' => 'icon-pencil',
-    //             'class' => 'RainLab\Blog\Models\Settings',
-    //             'order' => 500,
-    //             'keywords' => 'blog post category',
-    //             'permissions' => ['rainlab.blog.manage_settings']
-    //         ]
-    //     ];
-    // }
+    public function registerSettings()
+    {
+        return [
+            'blog' => [
+                'label' => 'rainlab.blog::lang.blog.menu_label',
+                'description' => 'rainlab.blog::lang.blog.settings_description',
+                'category' => 'rainlab.blog::lang.blog.menu_label',
+                'icon' => 'icon-pencil',
+                'class' => 'RainLab\Blog\Models\Settings',
+                'order' => 500,
+                'keywords' => 'blog post category',
+                'permissions' => ['rainlab.blog.manage_settings']
+            ]
+        ];
+    }
 
     /**
      * Register method, called when the plugin is first registered.

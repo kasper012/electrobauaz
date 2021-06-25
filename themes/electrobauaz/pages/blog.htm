@@ -1,11 +1,11 @@
-title = "Blog"
+title = "Bloq"
 url = "/blog/:page?"
 layout = "default"
 is_hidden = 0
 
 [viewBag]
 localeTitle[en] = "Blog"
-localeUrl[ru] = "Блог"
+localeTitle[ru] = "Блог"
 
 [blogPosts]
 pageNumber = "{{ :page }}"
@@ -91,13 +91,13 @@ categoryPage = "blog-categories"
             <div class="col-12 text-center">
               <!-- pagination start-->
               <ul class="pagination pagination--primary">
-                <li class="back"><a href="/blog/{{posts.currentPage-1}}">Back</a></li>
+                <li class="back"><a href="/blog/{{posts.currentPage-1}}">{{ 'Əvvəlki' |_}}</a></li>
                 {% for page in 1..posts.lastPage %}
                 <li class="{{ posts.currentPage == page ? 'current' : null }} number">
                   <a href="/blog/{{ page }} ">{{ page }}</a>
                 </li>
                 {% endfor %}
-                <li class="next"><a href="/blog/{{ posts.currentPage+1 }}">Next</a></li>
+                <li class="next"><a href="/blog/{{ posts.currentPage+1 }}">{{ 'Növbəti' |_ }}</a></li>
               </ul>
               <!-- pagination end-->
             </div>

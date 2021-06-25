@@ -1,34 +1,32 @@
 <?php namespace RainLab\Translate\FormWidgets;
 
-use Backend\FormWidgets\MarkdownEditor;
+use Media\Classes\MediaLibrary;
+use Media\FormWidgets\MediaFinder;
 use RainLab\Translate\Models\Locale;
 
 /**
- * ML Markdown Editor
- * Renders a multi-lingual Markdown editor.
+ * MLMediaFinderv2 renders a multilingual media finder for October CMS v2
  *
  * @package rainlab\translate
- * @author Alexey Bobkov, Samuel Georges
+ * @author Sascha Aeppli
  */
-class MLMarkdownEditor extends MarkdownEditor
+class MLMediaFinderv2 extends MediaFinder
 {
     use \RainLab\Translate\Traits\MLControl;
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    protected $defaultAlias = 'mlmarkdowneditor';
-
-    public $originalAssetPath;
-    public $originalViewPath;
+    protected $defaultAlias = 'mlmediafinder';
 
     /**
-     * @var bool legacyMode disables the Vue integration
+     * needed to preview images, because we only get a relative path
+     * @var string path to media library
      */
-    public $legacyMode = true;
+    private $mediaPath;
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function init()
     {
@@ -37,7 +35,7 @@ class MLMarkdownEditor extends MarkdownEditor
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function render()
     {
@@ -49,19 +47,23 @@ class MLMarkdownEditor extends MarkdownEditor
             return $parentContent;
         }
 
-        $this->vars['markdowneditor'] = $parentContent;
-        return $this->makePartial('mlmarkdowneditor');
+        $this->vars['mediafinder'] = $parentContent;
+        return $this->makePartial('mlmediafinder');
     }
 
+    /**
+     * Prepares the form widget view data
+     */
     public function prepareVars()
     {
         parent::prepareVars();
         $this->prepareLocaleVars();
+        // make root path of media files accessible
+        $this->vars['mediaPath'] = $this->mediaPath = MediaLibrary::url('/');
     }
 
     /**
-     * Returns an array of translated values for this field
-     * @return array
+     * @inheritDoc
      */
     public function getSaveValue($value)
     {
@@ -69,9 +71,9 @@ class MLMarkdownEditor extends MarkdownEditor
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
-    protected function loadAssets()
+    public function loadAssets()
     {
         $this->actAsParent();
         parent::loadAssets();
@@ -79,7 +81,8 @@ class MLMarkdownEditor extends MarkdownEditor
 
         if (Locale::isAvailable()) {
             $this->loadLocaleAssets();
-            $this->addJs('js/mlmarkdowneditor.js');
+            $this->addJs('../../mlmediafinder/assets/js/mlmediafinder.js');
+            $this->addCss('../../mlmediafinder/assets/css/mlmediafinder.css');
         }
     }
 
@@ -88,7 +91,7 @@ class MLMarkdownEditor extends MarkdownEditor
      */
     protected function getParentViewPath()
     {
-        return base_path().'/modules/backend/formwidgets/markdowneditor/partials';
+        return base_path().'/modules/media/formwidgets/mediafinder/partials';
     }
 
     /**
@@ -96,7 +99,6 @@ class MLMarkdownEditor extends MarkdownEditor
      */
     protected function getParentAssetPath()
     {
-        return '/modules/backend/formwidgets/markdowneditor/assets';
+        return '/modules/media/formwidgets/mediafinder/assets';
     }
-
 }

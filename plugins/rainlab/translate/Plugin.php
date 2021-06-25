@@ -37,7 +37,7 @@ class Plugin extends PluginBase
 
     public function register()
     {
-        /* 
+        /*
          * Load localized version of mail templates (akin to localized CMS content files)
          */
         Event::listen('mailer.beforeAddContent', function ($mailer, $message, $view, $data, $raw, $plain) {
@@ -52,8 +52,8 @@ class Plugin extends PluginBase
         }, -1);
 
         /*
-         * Handle translated page URLs
-         */
+        * Handle translated page URLs
+        */
         Page::extend(function($model) {
             if (!$model->propertyExists('translatable')) {
                 $model->addDynamicProperty('translatable', []);
@@ -67,6 +67,40 @@ class Plugin extends PluginBase
             }
         });
 
+        /*
+         * Extension logic for October CMS v1.0
+         */
+        if (!class_exists('System')) {
+            $this->extendLegacyPlatform();
+        }
+        /*
+         * Extension logic for October CMS v2.0
+         */
+        else {
+            Event::listen('cms.theme.createThemeDataModel', function($attributes) {
+                return new \RainLab\Translate\Models\MLThemeData($attributes);
+            });
+
+            Event::listen('cms.template.getTemplateToolbarSettingsButtons', function($extension, $dataHolder) {
+                if ($dataHolder->templateType === 'page') {
+                    EventRegistry::instance()->extendEditorPageToolbar($dataHolder);
+                }
+            });
+        }
+
+        /*
+         * Register console commands
+         */
+        $this->registerConsoleCommand('translate.scan', 'Rainlab\Translate\Console\ScanCommand');
+
+        $this->registerAssetBundles();
+    }
+
+    /**
+     * extendLegacyPlatform will add the legacy features expected in v1.0
+     */
+    protected function extendLegacyPlatform()
+    {
         /*
          * Add translation support to file models
          */
@@ -106,13 +140,6 @@ class Plugin extends PluginBase
                 }
             });
         });
-
-        /*
-         * Register console commands
-         */
-        $this->registerConsoleCommand('translate.scan', 'Rainlab\Translate\Console\ScanCommand');
-
-        $this->registerAssetBundles();
     }
 
     public function boot()
@@ -290,13 +317,17 @@ class Plugin extends PluginBase
 
     public function registerFormWidgets()
     {
+        $mediaFinderClass = class_exists('System')
+            ? 'RainLab\Translate\FormWidgets\MLMediaFinderv2'
+            : 'RainLab\Translate\FormWidgets\MLMediaFinder';
+
         return [
             'RainLab\Translate\FormWidgets\MLText' => 'mltext',
             'RainLab\Translate\FormWidgets\MLTextarea' => 'mltextarea',
             'RainLab\Translate\FormWidgets\MLRichEditor' => 'mlricheditor',
             'RainLab\Translate\FormWidgets\MLMarkdownEditor' => 'mlmarkdowneditor',
             'RainLab\Translate\FormWidgets\MLRepeater' => 'mlrepeater',
-            'RainLab\Translate\FormWidgets\MLMediaFinder' => 'mlmediafinder',
+            $mediaFinderClass => 'mlmediafinder',
         ];
     }
 

@@ -9,7 +9,7 @@ localeTitle[ru] = "Блог"
 
 [blogPosts]
 pageNumber = "{{ :page }}"
-postsPerPage = 3
+postsPerPage = 1
 noPostsMessage = "Xəbər tapılmadı"
 sortOrder = "published_at desc"
 categoryPage = "blog"
@@ -97,7 +97,7 @@ categoryPage = "blog-categories"
                   <a href="/blog/{{ page }} ">{{ page }}</a>
                 </li>
                 {% endfor %}
-                <li class="next"><a href="/blog/{{ posts.currentPage+1 }}">{{ 'Növbəti' |_ }}</a></li>
+                <li class="next"><a href="{{ posts.currentPage+1 }}">{{ 'Növbəti' |_ }}</a></li>
               </ul>
               <!-- pagination end-->
             </div>
@@ -110,7 +110,6 @@ categoryPage = "blog-categories"
             <h4 class="articles__title">{{ 'Kateqoriyalar' |_ }}</h4>
             {% component 'blogCategories' %}
           </div>
-
         </div>
       </div>
     </div>

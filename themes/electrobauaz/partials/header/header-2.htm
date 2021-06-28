@@ -5,19 +5,24 @@
             <!-- main menu start-->
             <nav class="menu-holder">
                 <ul class="mobile-menu">
-                    <li class="menu-item menu-item--has-child {% if this.page.id == 'home' %} active {% endif %}"><a
-                            href="javascript:void(0);"><span>{{ 'Əsas səhifə' |_ }}</span></a>
-
+                    <li class="menu-item menu-item--has-child {% if this.page.id == 'home' %} active {% endif %}">
+                        <a href="javascript:void(0);"><span>{{ 'Əsas səhifə' |_ }}</span></a>
                     </li>
-                    <li class="menu-item {% if this.page.id == 'services' %} active {% endif %}"><a
-                            href="{{ 'services' | page }}"><span>{{ 'Xidmətlər' |_ }}</span></a></li>
-                    <li class="menu-item {% if this.page.id == 'projects' %} active {% endif %}"><a
-                            href="{{ 'projects' | page }}"><span>{{ 'Portfolio' |_ }}</span></a></li>
-                    <li class="menu-item {% if this.page.id == 'about' %} active {% endif %}"><a
-                            href="{{ 'about' | page }}"><span>{{ 'Haqqımızda' |_ }}</span></a></li>
-
+                    <li class="menu-item {% if this.page.id == 'services' %} active {% endif %}">
+                        <a href="{{ 'services' | page }}"><span>{{ 'Xidmətlər' |_ }}</span></a>
+                    </li>
+                    <li class="menu-item {% if this.page.id == 'projects' %} active {% endif %}">
+                        <a href="{{ 'projects' | page }}"><span>{{ 'Portfolio' |_ }}</span></a>
+                    </li>
+                    <li class="menu-item {% if this.page.id == 'about' %} active {% endif %}">
+                        <a href="{{ 'blog' | page }}"><span>{{ 'Xəbərlər' |_ }}</span></a>
+                    </li>
+                    <li class="menu-item {% if this.page.id == 'about' %} active {% endif %}">
+                        <a href="{{ 'about' | page }}"><span>{{ 'Haqqımızda' |_ }}</span></a>
+                    </li>
                     <li class="menu-item {% if this.page.id == 'contacts' %} active {% endif %}"><a
-                            href="{{ 'contacts' | page }}"><span>{{ 'Əlaqə' |_ }}</span></a></li>
+                            href="{{ 'contacts' | page }}"><span>{{ 'Əlaqə' |_ }}</span></a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -47,8 +52,8 @@
                             <li class="menu-item {% if this.page.id == 'projects' or this.page.id == 'project-details' %} active {% endif %}">
                                 <a href="{{ 'projects' | page }}"><span>{{ 'Portfolio' |_ }}</span></a>
                             </li>
-                            <!-- <li class="menu-item {% if this.page.id == 'blog' %} active {% endif %}"><a
-                                    href="{{ 'blog' | page }}"><span>{{ 'Xəbərlər' |_ }}</span></a></li> -->
+                            <li class="menu-item {% if this.page.id == 'blog' %} active {% endif %}"><a
+                                    href="{{ 'blog' | page }}"><span>{{ 'Xəbərlər' |_ }}</span></a></li>
                             <li class="menu-item {% if this.page.id == 'about' %} active {% endif %}">
                                 <a href="{{ 'about' | page }}"><span>{{ 'Haqqımızda' |_ }}</span></a>
                             </li>

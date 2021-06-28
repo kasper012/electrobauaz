@@ -18660,11 +18660,7 @@ footer.footer .socials-holder.socials-mobile{
     color:#0d73fc;
     margin:46px 0 13px 0
 }
-.blog-detail .content-block .title::before{
-    content:".";
-    display:inline-block;
-    margin-right:8px
-}
+
 .blog-detail .content-block .title span{
     color:#333
 }

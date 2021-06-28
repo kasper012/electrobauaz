@@ -19,6 +19,7 @@ class Company extends Model
       'counters',
       'team',
       'docs',
+      'faq'
 
     ];    
 

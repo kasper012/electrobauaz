@@ -91,13 +91,18 @@ categoryPage = "blog-categories"
             <div class="col-12 text-center">
               <!-- pagination start-->
               <ul class="pagination pagination--primary">
+                {% if posts.currentPage != 1 %}
                 <li class="back"><a href="/blog/{{posts.currentPage-1}}">{{ 'Əvvəlki' |_}}</a></li>
+                {% endif %}
                 {% for page in 1..posts.lastPage %}
                 <li class="{{ posts.currentPage == page ? 'current' : null }} number">
                   <a href="/blog/{{ page }} ">{{ page }}</a>
                 </li>
                 {% endfor %}
+                {% if posts.currentPage != posts.lastPage %}
                 <li class="next"><a href="{{ posts.currentPage+1 }}">{{ 'Növbəti' |_ }}</a></li>
+                {% else %}
+                {% endif %}
               </ul>
               <!-- pagination end-->
             </div>

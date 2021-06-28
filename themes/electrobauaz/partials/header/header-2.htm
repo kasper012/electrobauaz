@@ -20,6 +20,9 @@
                     <li class="menu-item {% if this.page.id == 'about' %} active {% endif %}">
                         <a href="{{ 'about' | page }}"><span>{{ 'Haqqımızda' |_ }}</span></a>
                     </li>
+                    <li class="menu-item {% if this.page.id == 'faq' %} active {% endif %}">
+                        <a href="{{ 'faq' | page }}"><span>{{ 'FAQ' |_ }}</span></a>
+                    </li>
                     <li class="menu-item {% if this.page.id == 'contacts' %} active {% endif %}"><a
                             href="{{ 'contacts' | page }}"><span>{{ 'Əlaqə' |_ }}</span></a>
                     </li>
@@ -57,8 +60,8 @@
                             <li class="menu-item {% if this.page.id == 'about' %} active {% endif %}">
                                 <a href="{{ 'about' | page }}"><span>{{ 'Haqqımızda' |_ }}</span></a>
                             </li>
-                            <!-- <li class="menu-item {% if this.page.id  ==  'faq' %} active {% endif %}"><a
-                                    href="{{ 'faq' | page }}"><span>FAQ</span></a></li> -->
+                            <li class="menu-item {% if this.page.id  ==  'faq' %} active {% endif %}"><a
+                                    href="{{ 'faq' | page }}"><span>FAQ</span></a></li>
                             <li class="menu-item {% if this.page.id == 'contacts' %} active {% endif %}">
                                 <a href="{{ 'contacts' | page }}"><span>{{ 'Əlaqə' |_ }}</span></a>
                             </li>

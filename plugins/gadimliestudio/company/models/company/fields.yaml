@@ -54,16 +54,16 @@ tabs:
                         type: mediafinder
 
 # FAQ
-        # faq:
-        #     type: repeater
-        #     prompt: Yeni sual-cavab əlavə et
-        #     tab: FAQ
-        #     form:
-        #         fields:
-        #             question:
-        #                 label: Sual
-        #             answer:
-        #                 label: Cavab
+        faq:
+            type: repeater
+            prompt: Yeni sual-cavab əlavə et
+            tab: FAQ
+            form:
+                fields:
+                    question:
+                        label: Sual
+                    answer:
+                        label: Cavab
 # Contacts        
         phone:
             tab: Əlaqə

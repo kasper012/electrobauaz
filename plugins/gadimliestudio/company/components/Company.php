@@ -31,6 +31,7 @@ class Company extends ComponentBase
 
         $company->partners = $settings->partners;
         $company->about = $settings->about;
+        $company->faq = $settings->faq;
 
         $company->excerpt = $settings->excerpt;
         $company->image = $settings->image;

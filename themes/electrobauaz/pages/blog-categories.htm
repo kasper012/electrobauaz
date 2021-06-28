@@ -76,13 +76,17 @@ categoryPage = "blog-categories"
             <div class="col-12 text-center">
               <!-- pagination start-->
               <ul class="pagination pagination--primary">
-                <li class="back"><a href="{{posts.currentPage-1}}">{{ 'Əvvəlki' |_}}</a></li>
+                {% if posts.currentPage != 1 %}
+                <li class="back"><a href="{{ 'blog-categories' | page({page:posts.currentPage-1}) }}">{{ 'Əvvəlki' |_}}</a></li>
+                {% endif %}
                 {% for page in 1  ..posts.lastPage %}
                 <li class="{{ posts.currentPage == page ? 'current' : null }} number">
-                  <a href="{{ page }} ">{{ page }}</a>
-                </li>
+                  <a href="{{ 'blog-categories' | page({page:page}) }}">{{ page }}</a>
+                </li> 
                 {% endfor %}
-                <li class="next"><a href="{{ posts.currentPage+1 }}">{{ 'Növbəti' |_ }}</a></li>
+                {% if posts.currentPage != posts.lastPage %}
+                <li class="next"><a href="{{ 'blog-categories' | page({page:posts.currentPage+1}) }}">{{ 'Növbəti' |_ }}</a></li>
+                {% endif %}
               </ul>
               <!-- pagination end-->
             </div>

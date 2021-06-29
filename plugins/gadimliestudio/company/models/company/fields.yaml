@@ -116,6 +116,11 @@ tabs:
                         label: Link?
                     link:
                         label: Link
+                        trigger:
+                            action: enable
+                            field: is_link
+                            condition: checked
+
 
         team:
             tab: Komanda

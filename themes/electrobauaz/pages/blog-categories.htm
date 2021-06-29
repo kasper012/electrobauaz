@@ -3,6 +3,11 @@ url = "/blog/category/:slug/:page?"
 layout = "default"
 is_hidden = 0
 
+[viewBag]
+localeTitle[en] = "Blog Categories"
+localeTitle[ru] = "Категории Блога"
+localeUrl[en] = "/blog/category/:slug/:page?"
+localeUrl[ru] = "/kategoriya-bloga/:slug/:page?"
 [blogPosts]
 pageNumber = "{{ :page }}"
 categoryFilter = "{{ :slug }}"

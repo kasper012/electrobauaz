@@ -7,6 +7,9 @@
                     <li class="menu-item menu-item--has-child {% if this.page.id == 'home' %} active {% endif %}">
                         <a href="javascript:void(0);"><span>{{ 'Əsas səhifə' |_ }}</span></a>
                     </li>
+					<li class="menu-item {% if this.page.id == 'about' %} active {% endif %}">
+						<a href="{{ 'about' | page }}"><span>{{ 'Haqqımızda' |_ }}</span></a>
+					</li>
                     <li class="menu-item {% if this.page.id == 'services' %} active {% endif %}">
                         <a href="{{ 'services' | page }}"><span>{{ 'Xidmətlər' |_ }}</span></a>
                     </li>
@@ -15,9 +18,6 @@
                     </li>
                     <li class="menu-item {% if this.page.id == 'blog' or this.page.id == 'post' or this.page.id == 'blog-categories' %} active {% endif %}">
                         <a href="{{ 'blog' | page }}"><span>{{ 'Xəbərlər' |_ }}</span></a>
-                    </li>
-                    <li class="menu-item {% if this.page.id == 'about' %} active {% endif %}">
-                        <a href="{{ 'about' | page }}"><span>{{ 'Haqqımızda' |_ }}</span></a>
                     </li>
                     <li class="menu-item {% if this.page.id == 'faq' %} active {% endif %}">
                         <a href="{{ 'faq' | page }}"><span>{{ 'FAQ' |_ }}</span></a>
@@ -49,6 +49,9 @@
 						<li class="menu-item {% if this.page.id == 'home' %} active {% endif %}">
 							<a href="{{ 'home' | page }}"><span>{{ 'Əsas səhifə' |_ }}</span></a>
 						</li>
+						<li class="menu-item {% if this.page.id == 'about' %} active {% endif %}">
+							<a href="{{ 'about' | page }}"><span>{{ 'Haqqımızda' |_ }}</span></a>
+						</li>
 						<li class="menu-item {% if this.page.id == 'services' %} active {% endif %}">
 							<a href="{{ 'services' | page }}"><span>{{ 'Xidmətlər' |_ }}</span></a>
 						</li>
@@ -57,9 +60,6 @@
 						</li>
 						<li class="menu-item {% if this.page.id == 'blog' or this.page.id == 'post' or this.page.id == 'blog-categories' %} active {% endif %}"><a
 								href="{{ 'blog' | page }}"><span>{{ 'Xəbərlər' |_ }}</span></a></li>
-						<li class="menu-item {% if this.page.id == 'about' %} active {% endif %}">
-							<a href="{{ 'about' | page }}"><span>{{ 'Haqqımızda' |_ }}</span></a>
-						</li>
 						<li class="menu-item {% if this.page.id  ==  'faq' %} active {% endif %}"><a
 								href="{{ 'faq' | page }}"><span>FAQ</span></a></li>
 						<li class="menu-item {% if this.page.id == 'contacts' %} active {% endif %}">

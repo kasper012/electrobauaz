@@ -7,8 +7,8 @@ is_hidden = 0
 [viewBag]
 localeTitle[en] = "About project"
 localeTitle[ru] = "О проекте"
-localeUrl[en] = "/project-detailed"
-localeUrl[ru] = "/o-proyekte"
+localeUrl[en] = "/project-detailed/:id"
+localeUrl[ru] = "/o-proyekte/:id"
 ==
 use Gadimliestudio\Projects\Models\Project;
 public function onStart() {

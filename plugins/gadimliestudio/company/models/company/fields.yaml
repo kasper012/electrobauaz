@@ -54,6 +54,16 @@ tabs:
                         type: mediafinder
 
 # FAQ
+
+        is_faq_active:
+            label: FAQ bölməsi aktivdirmi?
+            type: radio
+            default: no
+            tab: FAQ
+            options:
+                yes: Bəli
+                no: Xeyr
+
         faq:
             type: repeater
             prompt: Yeni sual-cavab əlavə et

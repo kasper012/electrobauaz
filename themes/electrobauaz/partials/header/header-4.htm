@@ -19,9 +19,11 @@
                     <li class="menu-item {% if this.page.id == 'blog' or this.page.id == 'post' or this.page.id == 'blog-categories' %} active {% endif %}">
                         <a href="{{ 'blog' | page }}"><span>{{ 'Xəbərlər' |_ }}</span></a>
                     </li>
+					
                     <li class="menu-item {% if this.page.id == 'faq' %} active {% endif %}">
                         <a href="{{ 'faq' | page }}"><span>{{ 'FAQ' |_ }}</span></a>
                     </li>
+					
                     <li class="menu-item {% if this.page.id == 'contacts' %} active {% endif %}"><a
                             href="{{ 'contacts' | page }}"><span>{{ 'Əlaqə' |_ }}</span></a>
                     </li>
@@ -60,8 +62,10 @@
 						</li>
 						<li class="menu-item {% if this.page.id == 'blog' or this.page.id == 'post' or this.page.id == 'blog-categories' %} active {% endif %}"><a
 								href="{{ 'blog' | page }}"><span>{{ 'Xəbərlər' |_ }}</span></a></li>
+						{% if company.is_faq_active == 'yes' %}
 						<li class="menu-item {% if this.page.id  ==  'faq' %} active {% endif %}"><a
 								href="{{ 'faq' | page }}"><span>FAQ</span></a></li>
+						{% endif %}
 						<li class="menu-item {% if this.page.id == 'contacts' %} active {% endif %}">
 							<a href="{{ 'contacts' | page }}"><span>{{ 'Əlaqə' |_ }}</span></a>
 						</li>

@@ -44,7 +44,8 @@ class Company extends ComponentBase
         $company->counters = $settings->counters;
         $company->team = $settings->team;
         $company->docs = $settings->docs;
-
+        
+        $company->is_faq_active = $settings->is_faq_active;
 
 
         $this->page['company'] = $company;

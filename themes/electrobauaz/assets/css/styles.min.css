@@ -22134,8 +22134,9 @@ section.section.product-info{
     min-height:140px
 }
 .services--style-2 .img-holder img{
-    max-height:140px;
-    width:auto
+    max-height: 140px;
+    width: auto;
+    object-fit: cover;
 }
 .benefits .heading{
     margin-bottom:40px

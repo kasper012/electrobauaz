@@ -1,0 +1,18 @@
+title = "FAQ"
+url = "/fetch"
+layout = "default"
+is_hidden = 0
+[Company]
+
+[entryForm]
+==
+function onStart(){ 
+    $this['entries'] = DB::table('mja_forms_entries')->get();
+}
+==
+<div class="container" style="margin-top: 200px;">
+    {% for entry in entries %}
+        {{ loop.index }}{{ entry.title }}
+        <br>
+    {% endfor %}
+</div>

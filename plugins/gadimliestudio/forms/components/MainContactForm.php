@@ -57,8 +57,12 @@ class MainContactForm extends ComponentBase
         } else {
             $params = Input::all();
             Mail::send('ContactForm', $params, function($message) {
-                $message->to(env('MAIL_TO', 'subayev@gadimlie.com'), '');
+                $message->to(env('MAIL_TO'));
                 $message->subject('Veb saytdan yeni mesaj ');
+            });
+            Mail::send('Thanx', $params, function($message) {
+                $message->to($_POST['email']);
+                $message->subject('Spasibo ');
             });
         }
 

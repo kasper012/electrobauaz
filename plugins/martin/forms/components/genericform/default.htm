@@ -1,0 +1,54 @@
+
+
+<form class="form  contact--form contacts-page-form" id="get-in-touch" data-request="{{ __SELF__ }}::onFormSubmit">
+    {{ form_token() }}
+    <div id="{{ __SELF__ }}_forms_flash"></div>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="title-block">
+          <h3 class="title">{{ 'Bizimlə əlaqə saxlayın' |_ }}</span></h3>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <label class="input-label">
+          <input class="form-field input input-name" id="input-name" type="text" name="name"
+            required="required" /><span>{{ 'Ad və soyad' |_ }}</span>
+        </label>
+      </div>
+      <div class="col-md-6">
+        <label class="input-label">
+          <input class="form-field input input-text" id="input-text" type="text" name="subject"
+            required="required" /><span>{{ 'Mövzu' |_ }}</span>
+        </label>
+      </div>
+      <div class="col-md-6">
+        <label class="input-label">
+          <input class="form-field input input-tel" id="input-tel" type="tel" name="phone"
+            required="required" /><span>{{ 'Telefon' |_ }}</span>
+        </label>
+      </div>
+      <div class="col-md-6">
+        <label class="input-label">
+          <input class="form-field input input-mail" id="input-mail" type="email" name="email"
+            required="required" /><span>{{ 'Email' |_ }}</span>
+        </label>
+      </div>
+      <div class="col-12">
+        <label class="textarea-label">
+          <textarea class="form-field textarea" id="textarea" name="msg"></textarea><span>{{ 'Mesajınız' |_ }}</span>
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="button-holder">
+          <button class="button button--transparent" type="submit"
+            data-hover="{{ 'Göndər' |_ }}"><span>{{ 'Göndəre getsin' |_ }}</span></button>
+        </div>
+      </div>
+    </div>
+  </form>
+ 
